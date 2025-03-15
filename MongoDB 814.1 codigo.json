@@ -1,0 +1,29 @@
+[
+  {
+    $project:
+      /**
+       * specifications: The fields to
+       *   include or exclude.
+       */
+      {
+        _id: 0,
+        price: 1,
+        caro: {
+          $gt: ["$price", 300],
+        },
+        medio: {
+          $and: [
+            {
+              $gt: ["$price", 100],
+            },
+            {
+              $lte: ["$price", 300],
+            },
+          ],
+        },
+        barato: {
+          $lte: ["$price", 100],
+        },
+      },
+  },
+]

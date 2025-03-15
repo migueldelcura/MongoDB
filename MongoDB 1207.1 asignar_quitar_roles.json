@@ -1,0 +1,7 @@
+db.createUser(
+  {
+    user: "usu2",
+    pwd:  passwordPrompt(),  
+    roles: [{ role: "read", db: "db1" } ]
+  }
+)

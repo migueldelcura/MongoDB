@@ -1,0 +1,42 @@
+db.createView
+(
+ "precios_tipo",
+ "listingsAndReviews",
+
+[
+  {
+    $match:
+      /**
+       * query: The query in MQL.
+       */
+      {
+        price: {
+          $gt: 200,
+        },
+      },
+  },
+  {
+    $group:
+      /**
+       * _id: The id of the group.
+       * fieldN: The first field name.
+       */
+      {
+        _id: "$property_type",
+        precio: {
+          $avg: "$price",
+        },
+      },
+  },
+  {
+    $sort:
+      /**
+       * Provide any number of field/order pairs.
+       */
+      {
+        precio: 1,
+      },
+  },
+]
+
+)

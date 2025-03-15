@@ -1,0 +1,7 @@
+Algunas direcciones útils para aprender Expresiones Regulares
+
+https://www.mongodb.com/docs/manual/reference/operator/query/regex/
+https://regexr.com/
+https://regex101.com/
+https://perldoc.perl.org/perlre
+https://www.geeksforgeeks.org/perl-regex-cheat-sheet/

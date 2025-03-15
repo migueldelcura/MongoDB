@@ -1,0 +1,23 @@
+//Crear el role
+db.createRole({
+    role: "lector_db1",
+    privileges: [
+        {
+            resource: { db: "db1", collection: "" },
+            actions: [ "find" ]
+        }
+    ],
+    roles: []
+})
+
+//Crear el usuario sin roles
+db.createUser(
+  {
+    user: "usu3",
+    pwd:  passwordPrompt(),  
+    roles: [  ]
+  }
+)
+
+//Asignar al usuario
+db.grantRolesToUser("usu3", [{ role: "lector_db1",db:"db1" }])

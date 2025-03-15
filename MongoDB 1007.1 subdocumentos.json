@@ -1,0 +1,62 @@
+db.createCollection(
+    "coches", 
+{
+    "validator": 
+	{
+        $jsonSchema: 
+		{
+            "bsonType": "object",
+            "description": "Validación para los coches",
+            "required": ["matricula", "marca", "modelo"],
+            "properties": 
+			{
+                "matricula": {
+                    "bsonType": "string",
+                    "description": "Matricula es una cadena y obligatorio"
+                },
+                "marca": {
+                    "bsonType": "string",
+                    "description": "La marca es una cadena y obligatorio"
+                },
+                "modelo": {
+                    "bsonType": "string",
+                    "description": "El modelo  es una cadena"
+                },
+		        "caballos": {
+                    "bsonType": "int",
+                    "description": "Los caballos debe ser un entero y entre 60 y 400",
+		            minimum: 60,
+                    maximum: 400,
+                },
+		        "precio": {
+                     "bsonType": "double",
+                     "description": "El precio debe ser un double"
+                },
+		        "concesionarios": {
+                    "bsonType": "array",
+                    "description": "Concesionarios debe ser un array de cadenas",
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "items": {
+                        "bsonType": "string"
+                    }
+                },
+				"datos": {
+                    "bsonType": "object",
+                    "description": "Datos generales del coche",
+                    "required": ["descripcion"],
+                    "properties": {
+                        "descripcion": {
+                            "bsonType": "string",
+                            "description": "Descripcion de las caracteristicas del coche"
+                        }
+                   }
+                }     
+			}
+		}
+    }
+}
+)
+
+
+db.coches.insertOne({matricula: "xxxxx3", marca: "Ford", modelo: "Mustang", caballos: 300, precio: 100.50, concesionarios: ["uno", "dos"],datos:{ pais: "USA",longitud: 5,descripcion: "kkkkk"}})

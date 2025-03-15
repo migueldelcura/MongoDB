@@ -1,0 +1,28 @@
+# Solo el lookup
+db.departamentos.aggregate( [
+   {
+     $lookup:
+       {
+         from: "localidades",
+         localField: "_id",
+         foreignField: "cod_departamento",
+         as: "localidades"
+       }
+  }
+] )
+
+
+#Co una etapa de project
+db.departamentos.aggregate( [
+   {
+     $lookup:
+       {
+         from: "localidades",
+         localField: "_id",
+         foreignField: "cod_departamento",
+         as: "localidades"
+       }},
+    {$project:{ nombre: 1, "localidades.ciudad": 1}}
+] )
+
+

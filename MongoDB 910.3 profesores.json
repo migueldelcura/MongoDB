@@ -1,0 +1,25 @@
+db.profesores.insertMany([
+{
+  _id: 101,
+  nombre: "Profesor1",
+  apellidos: "Apellidos1",
+  edad: 45,
+  salario: 1000
+}
+,
+ {
+  _id: 102,
+  nombre: "Profesor2",
+  apellidos: "Apellidos2",
+  edad: 47,
+  salario: 1200
+}
+,
+{
+  _id: 103,
+  nombre: "Profesor3",
+  apellidos: "Apellidos3",
+  edad: 49,
+  salario: 1500
+}
+])

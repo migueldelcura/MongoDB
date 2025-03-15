@@ -1,0 +1,14 @@
+db.departamentos.aggregate( [
+   {
+     $lookup:
+       {
+         from: "empleados",
+         localField: "_id",
+         foreignField: "cod_departamento",
+         as: "empleados"
+       }
+  },
+  {
+    $project: { _id:0, nombre: 1,"empleados.nombre": 1, "empleados.apellidos": 1}
+  }
+] )

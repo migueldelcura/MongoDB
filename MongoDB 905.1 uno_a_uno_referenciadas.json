@@ -1,0 +1,20 @@
+db.localidades.insertMany([
+{
+  _id: "BA",
+  ciudad: "Buenos Aires",
+  pais: "Argentina",
+  poblacion: "16 millones",
+  turismo: ["edificios","tango","gastronomia","museos","parques"],
+  direccion: "Avenida ejemplo 1",
+  cod_departamento: 1
+}
+,
+{
+  _id: "SA",
+  ciudad: "Santiago",
+  pais: "Chile",
+  poblacion: " millones",
+  turismo: ["iglesias","vino","gastronomia","museos"],
+  direccion: "Calle Pez 23",
+  cod_departamento: 2
+}])

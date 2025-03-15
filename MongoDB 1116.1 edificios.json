@@ -1,0 +1,33 @@
+db.edificios.insertMany(
+[
+{ nombre: "edificio A",
+  sensores: {
+      t1: 10,
+	  t2: 20,
+	  t4: 15,
+	  t6: 17,
+	  t9: 21
+	  }
+	  }
+	  ,
+	{ nombre: "edificio B",
+  sensores: {
+      t1: 2,
+	  t2: 23,
+	  t3: 16,
+	  t5: 11,
+	  t6: 19
+	  }
+	  }
+	  ,  
+	  
+	{ nombre: "edificio c",
+  sensores: {
+      t2: 4,
+	  t6: 21,
+	  t8: 13,
+	  t9: 13,
+	  t10: 19 	  
+	  }
+	  }
+	  ])

@@ -1,0 +1,22 @@
+db.departamentos.insertMany([
+{
+  _id: 1,
+  nombre: "Informática",
+  responsable: {
+        nombre: "Pedro",
+	apellidos: "Ramirez Perez",
+	edad: 35
+      },
+  descripcion: "ejemplo de departamento"
+}
+,
+{
+  _id: 2,
+  nombre: "Recursos Humanos",
+  responsable: {
+        nombre: "Raul",
+	apellidos: "García López",
+	edad: 42
+      },
+  descripcion: "ejemplo de departamento"
+}])

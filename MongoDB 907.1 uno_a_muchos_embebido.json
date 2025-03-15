@@ -1,0 +1,24 @@
+db.departamentos.insertOne(
+{
+  _id: 1,
+  nombre: "Informática",
+  responsable: {
+        nombre: "Pedro",
+	apellidos: "Ramirez Perez",
+	edad: 35
+      },
+  empleados: [
+     {cod_empleado: 100,
+     nombre: "Empleado 1",
+     apellidos: "Apellidos 1",
+     edad: 30
+     },
+     {cod_empleado: 101,
+     nombre: "Empleado 2",
+     apellidos: "Apellidos 2",
+     edad: 40
+     }
+ ],
+  descripcion: "ejemplo de departamento"
+}
+)

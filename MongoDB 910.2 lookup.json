@@ -1,0 +1,11 @@
+db.cursos.aggregate([
+  {
+    $lookup:
+	 {
+	   from: "profesores",
+	   localField: "profesores",
+	   foreignField: "_id",
+	   as: "Profesores"
+	  }
+  }
+])
